@@ -1,0 +1,32 @@
+{% extends 'app/base.html' %}
+{% load static crispy_forms_tags %}
+{% block title %}{{title}}{% endblock %}
+
+{% block javascript %}
+{{form.media}}
+{% endblock javascript %}
+
+{% block content %}
+
+<div class="page-header">
+    <h3 class="page-title">{{title}} {{object}}</h3>
+</div>
+<div class="row">
+
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">{{object}}</h4>
+
+                <form class="forms-sample" method="post" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <button type="submit" class="btn btn-gradient-primary mr-2">Save</button>
+                    <button type="button" onclick="history.back()" class="btn btn-light btn-outline-secondary">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}
