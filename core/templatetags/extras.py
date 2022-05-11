@@ -1,33 +1,51 @@
-import json
-import re
-
 from django.template.defaulttags import register
 
 
 @register.filter(name="times")
 def times(number):
-    return range(number)
+	return range(number)
 
 
 @register.filter()
 def class_name(value):
-    return value.__class__.__name__
-
-
-@register.filter
-def pretty_json(value):
-    return json.dumps(value, indent=4)
+	return value.__class__.__name__
 
 
 @register.filter
 def get_item(dictionary, key):
-    return str(dictionary.get(key))
+	return str(dictionary.get(key))
 
 
-@register.filter
-def make_variable(value):
-    rep = {"&": "and", " ": "_", ",": "", "/": "_or_", "-": "_"}
-    rep = {re.escape(k): v for k, v in rep.items()}
-    pattern = re.compile("|".join(rep.keys()))
-    result = pattern.sub(lambda m: rep[re.escape(m.group(0))], value)
-    return result.lower()
+@register.simple_tag
+def get_verbose_name(queryset):
+	"""
+	Returns verbose_name of model
+	"""
+	try:
+		return queryset.model.__name__._meta.verbose_name
+	except:
+		return queryset.model.__name__
+
+
+@register.simple_tag
+def get_verbose_name_plural(queryset):
+	"""
+	Returns verbose_name_plural of model
+	"""
+	try:
+		return queryset.model.__name__._meta.verbose_name_plural
+	except:
+		return queryset.model.__name__
+
+
+@register.simple_tag
+def get_new_link(queryset):
+	return queryset.model.__name__
+
+
+@register.simple_tag
+def get_verbose_field_name(instance, field_name):
+	"""
+	Returns verbose_name for a field.
+	"""
+	return instance._meta.get_field(field_name).verbose_name.title()
