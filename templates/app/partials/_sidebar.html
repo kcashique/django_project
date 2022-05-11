@@ -22,21 +22,35 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-blog" aria-expanded="false" aria-controls="ui-blog">
-                <span class="menu-title">Menu with submenu</span>
+            <a class="nav-link" data-toggle="collapse" href="#ui-users" aria-expanded="false" aria-controls="ui-users">
+                <span class="menu-title">Users</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-crosshairs-gps menu-icon"></i>
             </a>
-            <div class="collapse" id="ui-blog">
+            <div class="collapse" id="ui-users">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="#">Submenu</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Submenu</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'customers:customer_list' %}">Customers</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'workers:worker_list' %}">Workers</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'supervisors:supervisor_list' %}">Supervisors</a></li>
                 </ul>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span class="menu-title">Menu</span>
+            <a class="nav-link" data-toggle="collapse" href="#ui-services" aria-expanded="false" aria-controls="ui-services">
+                <span class="menu-title">Services</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-services">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'services:category_list' %}">Categories</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'services:service_list' %}">Services</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'orders:order_list' %}">
+                <span class="menu-title">Orders</span>
                 <i class="mdi mdi-contacts menu-icon"></i>
             </a>
         </li>

@@ -1,0 +1,305 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="main-nav d-flex justify-content-between align-items-center">
+
+          <a href="/" class="logo">
+            <img src="{% static 'app/images/logo.svg' %}" alt="" style="height:80px;">
+          </a>
+
+          <ul class="nav">
+            <li class="scroll-to-section"><a href="#" class="active">Home</a></li>
+            <li class="scroll-to-section"><a href="#">Services</a></li>
+            <li class="scroll-to-section"><a href="#">Profile</a></li>
+          </ul>
+
+          <ul class="nav">
+            <li class="nav_btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11.9885 0.333252C5.5485 0.333252 0.333496 5.55992 0.333496 11.9999C0.333496 18.4399 5.5485 23.6666 11.9885 23.6666C18.4402 23.6666 23.6668 18.4399 23.6668 11.9999C23.6668 5.55992 18.4402 0.333252 11.9885 0.333252ZM20.0735 7.33325H16.6318C16.2585 5.87492 15.7218 4.47492 15.0218 3.17992C17.1685 3.91492 18.9535 5.40825 20.0735 7.33325ZM12.0002 2.71325C12.9685 4.11325 13.7268 5.66492 14.2285 7.33325H9.77183C10.2735 5.66492 11.0318 4.11325 12.0002 2.71325ZM2.97016 14.3333C2.7835 13.5866 2.66683 12.8049 2.66683 11.9999C2.66683 11.1949 2.7835 10.4133 2.97016 9.66659H6.9135C6.82016 10.4366 6.75016 11.2066 6.75016 11.9999C6.75016 12.7933 6.82016 13.5633 6.9135 14.3333H2.97016ZM3.92683 16.6666H7.3685C7.74183 18.1249 8.2785 19.5249 8.9785 20.8199C6.83183 20.0849 5.04683 18.6033 3.92683 16.6666ZM7.3685 7.33325H3.92683C5.04683 5.39659 6.83183 3.91492 8.9785 3.17992C8.2785 4.47492 7.74183 5.87492 7.3685 7.33325ZM12.0002 21.2866C11.0318 19.8866 10.2735 18.3349 9.77183 16.6666H14.2285C13.7268 18.3349 12.9685 19.8866 12.0002 21.2866ZM14.7302 14.3333H9.27016C9.16516 13.5633 9.0835 12.7933 9.0835 11.9999C9.0835 11.2066 9.16516 10.4249 9.27016 9.66659H14.7302C14.8352 10.4249 14.9168 11.2066 14.9168 11.9999C14.9168 12.7933 14.8352 13.5633 14.7302 14.3333ZM15.0218 20.8199C15.7218 19.5249 16.2585 18.1249 16.6318 16.6666H20.0735C18.9535 18.5916 17.1685 20.0849 15.0218 20.8199ZM17.0868 14.3333C17.1802 13.5633 17.2502 12.7933 17.2502 11.9999C17.2502 11.2066 17.1802 10.4366 17.0868 9.66659H21.0302C21.2168 10.4133 21.3335 11.1949 21.3335 11.9999C21.3335 12.8049 21.2168 13.5866 21.0302 14.3333H17.0868Z"
+                  fill="#2D416F" />
+              </svg>
+
+              <a href="#">English</a>
+            </li>
+            <li class="nav_btn btn-color"><a href="{% url 'auth_login' %}">Login</a></li>
+          </ul>
+
+          <a class='menu-trigger'>
+            <span>Menu</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-6 align-self-center">
+            <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+              <div class="row">
+                <div class="col-lg-12">
+                  <h1>It’s our duty to get <br>your <span class="coloured">work done</span> !</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur libero et velit interdum, ac aliquet odio mattis.</p>
+                </div>
+                <div class="col-lg-12">
+                  <a class="nav_btn btn-color" href="#">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+              <img src="{% static 'web/images/hero.svg' %}" alt="" style="margin-right: -6em;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="about" class="about section">
+  <div class="container">
+    <div class="row">
+      <h2 class="section-heading">How do we help you?</h2>
+      <div class="col-lg-12 about-wrapper">
+
+        <div class="row feature">
+          <div class="col-lg-3">
+            <div class="about-image wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+              <img src="{% static 'web/images/f1.png' %}" alt="" class="w-100">
+            </div>
+          </div>
+
+          <div class="col-lg-8 align-self-center wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="about-content">
+              <h6>About Us</h6>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row feature">
+
+          <div class="col-lg-8 align-self-center  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="about-content">
+              <h6>About Us</h6>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div class="about-image wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+              <img src="{% static 'web/images/f2.png' %}" alt="" class="w-100">
+            </div>
+          </div>
+        </div>
+
+        <div class="row feature">
+          <div class="col-lg-3">
+            <div class="about-image wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+              <img src="{% static 'web/images/f3.png' %}" alt="" class="w-100">
+            </div>
+          </div>
+
+          <div class="col-lg-8 align-self-center  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="about-content">
+              <h6>About Us</h6>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="categories" class="categories section">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="section-heading wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
+            <h2 class="section-heading">How do we help you?</h2>
+            <div class="line-dec"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="loop owl-carousel">
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                  <div class="thumb">
+                    <img src="{% static 'web/images/icon.png' %}" alt="">
+                  </div>
+                  <div class="down-content">
+                    <span>Marketing</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                  <div class="thumb">
+                    <img src="{% static 'web/images/icon.png' %}" alt="">
+                  </div>
+                  <div class="down-content">
+                    <span>Marketing</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                  <div class="thumb">
+                    <img src="{% static 'web/images/icon.png' %}" alt="">
+                  </div>
+                  <div class="down-content">
+                    <span>Marketing</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                  <div class="thumb">
+                    <img src="{% static 'web/images/icon.png' %}" alt="">
+                  </div>
+                  <div class="down-content">
+                    <span>Marketing</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                  <div class="thumb">
+                    <img src="{% static 'web/images/icon.png' %}" alt="">
+                  </div>
+                  <div class="down-content">
+                    <span>Marketing</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="display">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="red_card">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="{% static 'web/images/mobile.png' %}" alt="" style="height:350px;">
+            </div>
+            <div class="col-md-6">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, tenetur enim adipisci tempora laboriosam accusantium expedita nemo. Itaque cupiditate similique doloribus nostrum sapiente dicta, fugit, eum expedita deserunt placeat
+                repellat?</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer">
+
+  <div class="row">
+
+    <div class="col-md-3 mt-2 mt-sm-5">
+      <ul class="list-unstyled social">
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+      </ul>
+    </div>
+
+    <div class="col-md-3 mt-2 mt-sm-5">
+      <ul class="list-unstyled social">
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+      </ul>
+    </div>
+
+    <div class="col-md-3 mt-2 mt-sm-5">
+      <ul class="list-unstyled social">
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+      </ul>
+    </div>
+
+    <div class="col-md-3 mt-2 mt-sm-5">
+      <ul class="list-unstyled social">
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="#">About</a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+{% endblock content %}
+
+{% block js_plugins %}
+{% endblock js_plugins %}
+
+{% block javascript %}
+{% endblock javascript %}

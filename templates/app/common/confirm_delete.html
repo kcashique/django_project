@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+{% load static i18n crispy_forms_tags  %}
+{% block title %}Delete "{{object}}"{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  <h3 class="page-title"> Delete "{{object}}"</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <form method="post">{% csrf_token %}
+          <p>Are you sure you want to delete "{{ object }}"?</p>
+          <div class="buttons mt-5">
+            <button type="submit" class="btn btn-gradient-danger">{% trans "Yes, Delete." %}</button>
+            <button type="button" onclick="history.back()" class="btn btn-light btn-outline-secondary">{% trans "No, Take me back" %}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

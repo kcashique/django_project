@@ -13,11 +13,11 @@ schema_view = get_schema_view(title="Project API")
 urlpatterns = (
     [
         path("admin/", admin.site.urls),
-        path("", include_docs_urls(title="Go Service API Documentation")),
+        path("", include_docs_urls(title="Project API Documentation")),
         path('schema', schema_view),
         path('accounts/', include('registration.backends.simple.urls')),
 
-        path("core/", include("core.urls", namespace="core")),
+        path("app/", include("core.urls", namespace="core")),
         path("users/", include("users.urls", namespace="users")),
         path("services/", include("services.urls", namespace="services")),
 

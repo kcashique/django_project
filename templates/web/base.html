@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{% block title %}Purple Admin{% endblock %}</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{% static 'app/vendors/css/vendor.bundle.base.css' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  {% block css_plugins %}{% endblock css_plugins %}
+  <link rel="shortcut icon" href="{% static 'app/images/favicon.ico' %}" />
+
+  <link rel="stylesheet" href="{% static 'web/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'web/css/animated.css' %}">
+  <link rel="stylesheet" href="{% static 'web/css/owl.css' %}">
+
+</head>
+
+<body>
+  <div class="container-scroller">
+    <div class="page-body-wrapper">
+      <div class="main-panel w-100">
+        <div class="content-wrapper">
+          {% block content %}
+
+          {% endblock content %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% block js_plugins %}{% endblock js_plugins %}
+
+  <script src="{% static 'web/js/jquery.min.js' %}"></script>
+  <script src="{% static 'web/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'web/js/owl-carousel.js' %}"></script>
+  <script src="{% static 'web/js/animation.js' %}"></script>
+  <script src="{% static 'web/js/imagesloaded.js' %}"></script>
+  <script src="{% static 'web/js/script.js' %}"></script>
+  {% block javascript %}{% endblock javascript %}
+</body>
+
+</html>
