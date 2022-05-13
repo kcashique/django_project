@@ -1,6 +1,5 @@
 from django.contrib.auth.decorators import login_required
 from django.urls import path
-
 from . import views
 
 app_name = 'services'
@@ -17,4 +16,6 @@ urlpatterns = [
     path('categorys/<str:pk>/', login_required(views.CategoryDetailView.as_view()),name='category_detail'),
     path('categorys/update/<str:pk>/', login_required(views.CategoryUpdateView.as_view()),name='category_update'),
     path('categorys/delete/<str:pk>/', login_required(views.CategoryDeleteView.as_view()),name='category_delete'),
+
+
 ]

@@ -2,6 +2,7 @@ from django.db import models
 from versatileimagefield.fields import VersatileImageField
 from django.urls import reverse_lazy
 from core.models import BaseModel
+from tinymce.models import HTMLField
 
 
 class Category(BaseModel):
@@ -10,7 +11,7 @@ class Category(BaseModel):
     priority = models.PositiveIntegerField()
     icon = VersatileImageField(upload_to="categories/icons")
     featured_image = VersatileImageField(upload_to="categories/featured_images")
-    description = models.TextField()
+    description = HTMLField()
     description_ar = models.TextField()
 
     class Meta:
@@ -34,7 +35,7 @@ class Category(BaseModel):
         return reverse_lazy('services:category_delete', kwargs={'pk': self.pk})
 
     def get_fields(self):
-        return [(field.verbose_name.title(), field.value_to_string(self)) for field in self._meta.fields]
+        return [(field.verbose_name.title(), field.value_to_object(self)) for field in self._meta.fields]
 
 
 class Service(BaseModel):
@@ -71,4 +72,4 @@ class Service(BaseModel):
         return reverse_lazy('services:service_delete', kwargs={'pk': self.pk})
 
     def get_fields(self):
-        return [(field.verbose_name.title(), field.value_to_string(self)) for field in self._meta.fields]
+        return [(field.verbose_name.title(), field.value_to_object(self)) for field in self._meta.fields]
