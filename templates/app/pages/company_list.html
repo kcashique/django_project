@@ -15,14 +15,11 @@
       {% for object in object_list %}
       <tr>
         <td>{{forloop.counter}}</td>
-        <td> {{object.job_title}} </td>
-        <td> {{object.job_post}} </td>
-        <td> {{object.job_category}} </td>
-        <td> {{object.company}} </td>
-        <td> {{object.job_requirment}} </td>
-        <td> {{object.salary}} </td>
-        <td> {{object.job_location}} </td>
-        <td> {{object.job_description}} </td>
+        <td> {{object.name}} </td>
+        <td> {{object.logo}} </td>
+        <td> {{object.about}} </td>
+        <td> {{object.location}} </td>
+        <td> {{object.industry}} </td>
         <td> {{object.is_active}} </td>
         {% if request.user.is_superuser %}
         <td>
