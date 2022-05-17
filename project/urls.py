@@ -21,6 +21,8 @@ urlpatterns = (
         path("users/", include("users.urls", namespace="users")),
         path("services/", include("services.urls", namespace="services")),
         path("jobs/", include("jobs.urls", namespace="jobs")),
+        path("applicants/", include("applicants.urls", namespace="applicants")),
+        path("recruiters/", include("recruiters.urls", namespace="recruiters")),
 
 
         path("api/v1/users/", include("api.v1.users.urls", namespace="api_v1_users")),

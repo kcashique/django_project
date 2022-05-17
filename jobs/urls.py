@@ -24,9 +24,9 @@ urlpatterns = [
     # path('states/update/<str:pk>/', login_required(views.StateUpdateView.as_view()),name='state_update'),
     # path('states/delete/<str:pk>/', login_required(views.StateDeleteView.as_view()),name='state_delete'),
 
-    path('companies/', login_required(views.CompanyListView.as_view()),name='company_list'),
-    path('companies/new/', login_required(views.CompanyCreateView.as_view()),name='company_new'),
-    path('companies/<str:pk>/', login_required(views.CompanyDetailView.as_view()),name='company_detail'),
-    path('companies/update/<str:pk>/', login_required(views.CompanyUpdateView.as_view()),name='company_update'),
-    path('companies/delete/<str:pk>/', login_required(views.CompanyDeleteView.as_view()),name='company_delete'),
+    path('skills/', login_required(views.SkillListView.as_view()),name='skill_list'),
+    path('skills/new/', login_required(views.SkillCreateView.as_view()),name='skill_new'),
+    path('skills/<str:pk>/', login_required(views.SkillDetailView.as_view()),name='skill_detail'),
+    path('skills/update/<str:pk>/', login_required(views.SkillUpdateView.as_view()),name='skill_update'),
+    path('skills/delete/<str:pk>/', login_required(views.SkillDeleteView.as_view()),name='skill_delete'),
 ]

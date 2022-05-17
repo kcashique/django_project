@@ -1,6 +1,6 @@
 from django.contrib import admin
 from core.custom_admin import CustomAdmin
-from .models import Job, Company
+from .models import Job, Skill
 
 
 @admin.register(Job)
@@ -19,6 +19,6 @@ class JobAdmin(CustomAdmin):
 # class ProfileAdmin(CustomAdmin):
 #     pass
 
-@admin.register(Company)
-class CompanyAdmin(CustomAdmin):
+@admin.register(Skill)
+class SkillAdmin(CustomAdmin):
     pass

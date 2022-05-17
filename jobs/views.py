@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
-from jobs.models import Job, Company
+from jobs.models import Job, Skill
 
 class JobListView(ListView):
 	queryset = Job.objects.filter(is_active=True)
@@ -38,34 +38,34 @@ class JobDeleteView(DeleteView):
 	success_url = reverse_lazy('services:job_list')
 
 
-class CompanyListView(ListView):
-	queryset = Company.objects.filter(is_active=True)
-	template_name = "app/pages/company_list.html"
+class SkillListView(ListView):
+	queryset = Skill.objects.filter(is_active=True)
+	template_name = "app/pages/skill_list.html"
 
 	def get_context_data(self,**kwargs):
 		context = super().get_context_data(**kwargs)
-		context['new_link'] = reverse_lazy('jobs:company_new')
+		context['new_link'] = reverse_lazy('jobs:skill_new')
 		return context
 
 
-class CompanyDetailView(DetailView):
-	queryset = Company.objects.filter(is_active=True)
+class SkillDetailView(DetailView):
+	queryset = Skill.objects.filter(is_active=True)
 	template_name = "app/common/object_detail.html"
 
 
-class CompanyCreateView(CreateView):
-	model = Company
+class SkillCreateView(CreateView):
+	model = Skill
 	template_name = "app/common/object_form.html"
 	fields = "__all__"
 
 
-class CompanyUpdateView(UpdateView):
-	model = Company
+class SkillUpdateView(UpdateView):
+	model = Skill
 	template_name = "app/common/object_form.html"
 	fields = "__all__"
 
 
-class CompanyDeleteView(DeleteView):
-	model = Company
+class SkillDeleteView(DeleteView):
+	model = Skill
 	template_name = 'app/common/confirm_delete.html'
-	success_url = reverse_lazy('jobs:company_list')
+	success_url = reverse_lazy('jobs:skill_list')
